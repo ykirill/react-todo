@@ -5,11 +5,32 @@
   "repository": "git@github.com:ykirill/react-todo.git",
   "author": "nemaeska <k.n.yakushev@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production webpack -p",
+    "start": "NODE_ENV=development webpack-dev-server",
+    "webpack:w": "NODE_ENV=development webpack -d",
+    "lint": "eslint --color"
+  },
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.4.0",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
-    "babel-preset-stage-0": "^6.22.0"
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-register": "^6.23.0",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-loader": "^1.6.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   }
 }

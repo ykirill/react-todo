@@ -1,0 +1,20 @@
+---
+  extends: "airbnb-base"
+  parser: "babel-eslint"
+  plugins:
+    - "react"
+  ecmaFeatures:
+    jsx: true
+    modules: true
+    arrowFunctions: true
+  include: "./src/"
+  rules:
+    no-console: 0
+    class-methods-use-this:
+      - 1
+      - exceptMethods:
+        - "foo"
+        - "render"
+    react/jsx-no-undef: 1
+    react/jsx-uses-react: 1
+    react/jsx-uses-vars: 1
