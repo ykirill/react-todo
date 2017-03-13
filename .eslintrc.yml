@@ -9,9 +9,8 @@
     arrowFunctions: true
   include: "./src/"
   rules:
-    no-console: 0
     class-methods-use-this:
-      - 1
+      - 0
       - exceptMethods:
         - "foo"
         - "render"
