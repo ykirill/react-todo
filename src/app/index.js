@@ -3,7 +3,9 @@
  */
 import React from 'react';
 import ReactDom from 'react-dom';
+
+import store from './store';
 import Root from './containers/root';
 
 /* global document:true */
-ReactDom.render(<Root />, document.getElementById('app'));
+ReactDom.render(<Root store={store}/>, document.getElementById('app'));

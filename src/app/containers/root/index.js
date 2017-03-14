@@ -1,13 +1,23 @@
 /**
  * Created by Kirill Yakushev aka nemaeska on 11.03.17.
  */
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import { Provider } from 'react-redux';
+
 import Main from '../Main/Main';
 
-class Root extends React.Component {
+class Root extends Component {
+  static propTypres = {
+    store: PropTypes.object.isRequired,
+  };
   render() {
+    const { store } = this.props;
     return (
-      <Main />
+      <Provider store={store}>
+        <div>
+          <Main/>
+        </div>
+      </Provider>
     );
   }
 }

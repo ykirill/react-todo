@@ -1,10 +1,15 @@
 /**
  * Created by Kirill Yakushev aka nemaeska on 12.03.17.
  */
-import React from 'react';
+import React, { PropTypes } from 'react';
 import s from './form.css';
 
 class Form extends React.Component {
+  static propTypes = {
+    value: PropTypes.string.isRequired,
+    handleOnChange: PropTypes.func.isRequired,
+    handleOnClick: PropTypes.func.isRequired,
+  };
   handleOnChange(e) {
     e.preventDefault();
     this.props.handleOnChange(e.target.value);

@@ -39,6 +39,7 @@ const config = {
     ],
   },
   watch: !isProd,
+  devtool: isProd ? null : 'source-map',
 };
 
 export default config;
