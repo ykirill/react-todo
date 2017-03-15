@@ -6,13 +6,12 @@ import st from './item.css';
 
 class Item extends React.Component {
   static propTypes = {
-    id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
-    completed: PropTypes.bool.isRequired,
+    item: PropTypes.object.isRequired,
     onClick: PropTypes.func.isRequired,
   };
   render() {
-    const { id, text, completed, onClick } = this.props;
+    const { item, onClick } = this.props;
+    const { id, text, completed } = item;
     return (
       <div className={st.item}>
         <p className={st.item_text}>{completed ? <s>{text}</s> : text}</p>

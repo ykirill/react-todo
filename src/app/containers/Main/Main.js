@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { connect } from 'react-redux';
-import { toggleTodo } from '../../actions';
+import { addTodo, toggleTodo } from '../../actions';
 
 import Form from '../../components/form/Form';
 import Item from '../../components/item/Item';
@@ -13,19 +13,20 @@ class Main extends React.Component {
     const { todos, dispatch } = this.props;
     return (
       <div>
-        {/* <Form
-         value={value}
-         handleOnChange={val => this.handleOnChange(val)}
-         handleOnClick={() => this.handleOnClick()}
-         />*/}
+        <Form
+         onSubmit={(e) => {
+           e.preventDefault();
+           const input = e.target.elements.text;
+           dispatch(addTodo(input.value));
+           input.value = '';
+         }}
+        />
          {todos.map(item =>
-         <Item
+        <Item
          key={item.id}
-         id={item.id}
-         text={item.text}
-         completed={item.completed}
+         item={item}
          onClick={id => dispatch(toggleTodo(id))}
-         />)}
+        />)}
       </div>
     );
   }

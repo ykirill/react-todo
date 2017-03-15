@@ -6,27 +6,20 @@ import s from './form.css';
 
 class Form extends React.Component {
   static propTypes = {
-    value: PropTypes.string.isRequired,
-    handleOnChange: PropTypes.func.isRequired,
-    handleOnClick: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
   };
-  handleOnChange(e) {
-    e.preventDefault();
-    this.props.handleOnChange(e.target.value);
-  }
-  handleOnClick(e) {
-    e.preventDefault();
-    this.props.handleOnClick();
-  }
   render() {
+    const { onSubmit } = this.props;
+    let input;
     return (
-      <form action="">
+      <form onSubmit={e => onSubmit(e)} name="lol" id="lol">
         <input
+          form="lol"
+          name="text"
+          type="text"
           className={s.text}
-          value={this.props.value}
-          type="text" onChange={e => this.handleOnChange(e)}
         />
-        <input className={s.submit} type="submit" onClick={e => this.handleOnClick(e)}/>
+        <button className={s.submit} type="submit">Add</button>
       </form>
     );
   }
