@@ -3,27 +3,29 @@
  */
 import React from 'react';
 import { connect } from 'react-redux';
+import { toggleTodo } from '../../actions';
 
 import Form from '../../components/form/Form';
 import Item from '../../components/item/Item';
 
 class Main extends React.Component {
   render() {
-    const { todos } = this.props;
-    console.log(todos);
+    const { todos, dispatch } = this.props;
     return (
       <div>
         {/* <Form
          value={value}
          handleOnChange={val => this.handleOnChange(val)}
          handleOnClick={() => this.handleOnClick()}
-         />
-         {items.map(item =>
+         />*/}
+         {todos.map(item =>
          <Item
          key={item.id}
-         item={item}
-         handleOnDelete={id => this.handleOnDelete(id)}
-         />)}*/}
+         id={item.id}
+         text={item.text}
+         completed={item.completed}
+         onClick={id => dispatch(toggleTodo(id))}
+         />)}
       </div>
     );
   }

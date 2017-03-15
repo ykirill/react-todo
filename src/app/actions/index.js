@@ -5,6 +5,7 @@ import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from './actionTypes';
 
 export const addTodo = text => ({
   type: ADD_TODO,
+  id: Math.random(),
   text,
 });
 
