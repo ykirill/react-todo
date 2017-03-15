@@ -12,9 +12,8 @@ class Form extends React.Component {
     const { onSubmit } = this.props;
     let input;
     return (
-      <form onSubmit={e => onSubmit(e)} name="lol" id="lol">
+      <form onSubmit={e => onSubmit(e)}>
         <input
-          form="lol"
           name="text"
           type="text"
           className={s.text}
